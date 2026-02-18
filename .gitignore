@@ -1,0 +1,6 @@
+*.zip
+*.tmp
+*.log
+*.sql
+.htaccess
+error_log
