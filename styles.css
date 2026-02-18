@@ -467,6 +467,34 @@ li {
   .cursor-glow {
     display: none;
   }
+  .stats li {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+  }
+  .stats strong {
+    font-size: 18px;
+  }
+  .stats {
+    gap: 8px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 12px;
+  }
+  .contact-strip{ margin-top: 26px; }
+  .btn {
+    padding: 8px 22px;
+  }
+  .name-tag {
+    margin: 0 0 1rem;
+  }
+  .eyebrow {
+    margin: 0.05rem 0 1.45rem;
+  }
+
 }
 
 @media (prefers-reduced-motion: reduce) {
