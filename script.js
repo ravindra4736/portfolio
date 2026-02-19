@@ -94,3 +94,48 @@ if (loadMoreButton && hiddenProjects.length) {
     loadMoreButton.setAttribute("aria-expanded", String(expanded));
   });
 }
+
+const navLinks = [...document.querySelectorAll(".section-nav .nav-link")];
+const navTargets = navLinks
+  .map((link) => document.querySelector(link.getAttribute("href")))
+  .filter(Boolean);
+
+const setActiveNav = (id) => {
+  let activeLink = null;
+  navLinks.forEach((link) => {
+    const isActive = link.getAttribute("href") === `#${id}`;
+    link.classList.toggle("active", isActive);
+    if (isActive) activeLink = link;
+  });
+
+  if (activeLink && window.matchMedia("(max-width: 900px)").matches) {
+    activeLink.scrollIntoView({
+      behavior: "smooth",
+      inline: "center",
+      block: "nearest",
+    });
+  }
+};
+
+if ("IntersectionObserver" in window && navTargets.length) {
+  const navObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) setActiveNav(entry.target.id);
+      });
+    },
+    { rootMargin: "-45% 0px -45% 0px", threshold: 0 }
+  );
+
+  navTargets.forEach((target) => navObserver.observe(target));
+}
+
+// Ensure "Contact" is highlighted at the very bottom where footer visibility
+// can be too small for intersection thresholds on some viewport sizes.
+const onScrollNavFallback = () => {
+  const atBottom =
+    window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 8;
+  if (atBottom) setActiveNav("contact");
+};
+
+window.addEventListener("scroll", onScrollNavFallback, { passive: true });
