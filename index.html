@@ -17,16 +17,40 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="mesh mesh-a" aria-hidden="true"></div>
-    <div class="mesh mesh-b" aria-hidden="true"></div>
-    <div class="mesh mesh-c" aria-hidden="true"></div>
+    <svg class="icon-sprite" aria-hidden="true" focusable="false">
+      <symbol id="i-briefcase" viewBox="0 0 24 24">
+        <path d="M9 7V6a3 3 0 0 1 3-3 3 3 0 0 1 3 3v1h3a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-3v2H9v-2H6a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h3Zm2 0h2V6a1 1 0 1 0-2 0v1Z"></path>
+      </symbol>
+      <symbol id="i-download" viewBox="0 0 24 24">
+        <path d="M12 3a1 1 0 0 1 1 1v8.59l2.3-2.3a1 1 0 0 1 1.4 1.42l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.42l2.3 2.3V4a1 1 0 0 1 1-1Zm-7 15a1 1 0 0 1 1 1v1h12v-1a1 1 0 1 1 2 0v2a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1Z"></path>
+      </symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24">
+        <path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24c1.06.35 2.2.54 3.38.54a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.85 21 3 13.15 3 3.5a1 1 0 0 1 1-1H7.5a1 1 0 0 1 1 1c0 1.18.19 2.32.54 3.38a1 1 0 0 1-.24 1l-2.2 2.2Z"></path>
+      </symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24">
+        <path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm0 2 8 5 8-5H4Zm16 10V9l-7.47 4.67a1 1 0 0 1-1.06 0L4 9v8h16Z"></path>
+      </symbol>
+      <symbol id="i-whatsapp" viewBox="0 0 24 24">
+        <path d="M12 3a9 9 0 0 1 7.8 13.5L21 21l-4.6-1.2A9 9 0 1 1 12 3Zm0 2a7 7 0 0 0-6.07 10.5l.2.33-.67 2.47 2.53-.66.32.18A7 7 0 1 0 12 5Zm3.2 9.5c-.17-.09-1-.5-1.15-.56-.15-.06-.26-.09-.37.09-.1.17-.4.56-.5.67-.08.1-.17.12-.33.04a5.8 5.8 0 0 1-1.7-1.05 6.4 6.4 0 0 1-1.18-1.47c-.12-.2 0-.3.1-.4.08-.08.17-.2.25-.29.08-.1.1-.17.16-.29.05-.11.02-.21-.01-.3-.04-.09-.37-.9-.5-1.24-.14-.33-.27-.28-.37-.28h-.32a.6.6 0 0 0-.44.2c-.15.17-.57.56-.57 1.37 0 .8.58 1.58.66 1.7.08.1 1.14 1.74 2.77 2.44 1.63.7 1.63.47 1.93.44.3-.02 1-.4 1.15-.8.14-.39.14-.72.1-.8-.03-.07-.14-.12-.3-.21Z"></path>
+      </symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24">
+        <path d="M6.9 8.2a1.9 1.9 0 1 1 0-3.8 1.9 1.9 0 0 1 0 3.8ZM5.2 9.8h3.4V20H5.2V9.8Zm5.6 0H14v1.4h.05c.45-.86 1.56-1.76 3.2-1.76 3.43 0 4.06 2.25 4.06 5.17V20h-3.4v-4.75c0-1.13-.02-2.58-1.57-2.58-1.57 0-1.81 1.23-1.81 2.5V20h-3.4V9.8Z"></path>
+      </symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24">
+        <path d="M8.7 10.3a1 1 0 0 1 1.4 0L12 12.17l1.9-1.88a1 1 0 1 1 1.4 1.42l-2.6 2.58a1 1 0 0 1-1.4 0L8.7 11.7a1 1 0 0 1 0-1.42Z"></path>
+      </symbol>
+    </svg>
+
+    <div class="mesh mesh-a" data-parallax="0.02" aria-hidden="true"></div>
+    <div class="mesh mesh-b" data-parallax="0.04" aria-hidden="true"></div>
+    <div class="mesh mesh-c" data-parallax="0.03" aria-hidden="true"></div>
     <div class="grain" aria-hidden="true"></div>
     <div class="cursor-glow" aria-hidden="true"></div>
 
     <div class="page">
       <header class="hero">
         <nav class="top-nav">
-          <p class="brand"></p>
+          <p class="brand">Portfolio</p>
           <a class="mini-link" href="./Ravi_Resume17feb.pdf" target="_blank"
             >Resume</a
           >
@@ -49,18 +73,29 @@
                 href="https://www.linkedin.com/in/ravindra4736/"
                 target="_blank"
                 rel="noreferrer"
-                >Hire Me</a
+                ><svg class="i"><use href="#i-briefcase"></use></svg>Hire Me</a
               >
               <a class="btn btn-ghost" href="./Ravi_Resume17feb.pdf" target="_blank"
-                >Download Resume</a
+                ><svg class="i"><use href="#i-download"></use></svg>Download Resume</a
               >
             </div>
             <div class="contact-strip">
-              <a href="tel:+918800818328">(+91) 8800818328</a>
-              <a href="mailto:ravindra4736@gmail.com">ravindra4736@gmail.com</a>
+              <a class="contact-link contact-phone" href="tel:+918800818328"
+                ><svg class="i"><use href="#i-phone"></use></svg>(+91) 8800818328</a
+              >
+              <a
+                class="contact-link contact-whatsapp"
+                href="https://wa.me/918800818328?text=Hi%20Ravindra%2C%20I%20want%20to%20discuss%20a%20project."
+                target="_blank"
+                rel="noreferrer"
+                ><svg class="i"><use href="#i-whatsapp"></use></svg>WhatsApp</a
+              >
+              <a class="contact-link contact-mail" href="mailto:ravindra4736@gmail.com"
+                ><svg class="i"><use href="#i-mail"></use></svg>ravindra4736@gmail.com</a
+              >
             </div>
           </div>
-          <aside class="hero-card">
+          <aside class="hero-card" data-parallax="0.015">
             <p class="hero-card-title">Core Focus</p>
             <ul>
               <li>High-performance Laravel and Core PHP apps</li>
@@ -86,6 +121,73 @@
             WordPress, and Shopify ecommerce implementations, while improving
             release quality through CI/CD and modern engineering workflows.
           </p>
+        </section>
+
+        <section class="section-head reveal">
+          <h2>What I Deliver</h2>
+          <p>Clear service areas with end-to-end ownership from build to deployment.</p>
+        </section>
+
+        <section class="deliverables-grid">
+          <article class="panel reveal">
+            <h3>Web Application Development</h3>
+            <p>
+              Build and maintain custom applications in Laravel and Core PHP
+              with modular architecture, clean APIs, and reliable release cycles.
+            </p>
+          </article>
+          <article class="panel reveal">
+            <h3>Ecommerce Implementation</h3>
+            <p>
+              Develop and customize Shopify and WordPress commerce experiences,
+              including theme customization, checkout workflows, and catalog setup.
+            </p>
+          </article>
+          <article class="panel reveal">
+            <h3>Performance and Reliability</h3>
+            <p>
+              Optimize MySQL queries, improve page performance, and harden
+              infrastructure with AWS and Linux server best practices.
+            </p>
+          </article>
+        </section>
+
+        <section class="section-head reveal">
+          <h2>Delivery Approach</h2>
+          <p>Practical workflow focused on predictable outcomes and maintainability.</p>
+        </section>
+
+        <section class="approach-grid">
+          <article class="panel reveal">
+            <h3>1. Understand Requirements</h3>
+            <p>Capture business goals, scope, dependencies, and timeline risks early.</p>
+          </article>
+          <article class="panel reveal">
+            <h3>2. Build with Standards</h3>
+            <p>Use reusable patterns, version control discipline, and code reviews.</p>
+          </article>
+          <article class="panel reveal">
+            <h3>3. Test and Optimize</h3>
+            <p>Validate functionality, improve performance, and ensure compatibility.</p>
+          </article>
+          <article class="panel reveal">
+            <h3>4. Deploy and Support</h3>
+            <p>Release using CI/CD and maintain stable post-deployment operations.</p>
+          </article>
+        </section>
+
+        <section class="section-head reveal">
+          <h2>Impact Highlights</h2>
+          <p>Examples of outcome-oriented work across recent projects.</p>
+        </section>
+
+        <section class="panel reveal">
+          <ul class="impact-list">
+            <li>Delivered production Shopify stores for multiple consumer brands.</li>
+            <li>Improved maintainability with modular Laravel/Core PHP codebases.</li>
+            <li>Reduced release friction through CI/CD and structured Git workflows.</li>
+            <li>Strengthened application stability with optimized MySQL design.</li>
+          </ul>
         </section>
 
         <section class="meta-grid">
@@ -167,7 +269,7 @@
             <span>AWS (S3, RDS, IAM, EC2)</span>
             <span>Nginx/Apache</span>
             <span>Git (Bitbucket/Github)</span>
-            <span>AI-assisted Developer Tools</span>
+            <span>AI-assisted Developer Tools (Cursor/Windsurf/Codex/Copilot)</span>
           </div>
         </section>
 
@@ -197,6 +299,9 @@
         <section class="project-grid">
           <article class="panel reveal">
             <h3>Kajaria Ceramics</h3>
+            <div class="project-badges">
+              <span class="tech-badge tech-laravel">Laravel</span>
+            </div>
             <p>Laravel + Bootstrap + MySQL, SEO improvements.</p>
             <a href="https://www.kajariaceramics.com/" target="_blank" rel="noreferrer"
               >kajariaceramics.com</a
@@ -204,6 +309,9 @@
           </article>
           <article class="panel reveal">
             <h3>Merino Group</h3>
+            <div class="project-badges">
+              <span class="tech-badge tech-laravel">Laravel</span>
+            </div>
             <p>Led cross-functional delivery in 2 months. Laravel + Bootstrap + MySQL.</p>
             <a href="https://merinogroup.com/" target="_blank" rel="noreferrer"
               >merinogroup.com</a
@@ -211,11 +319,17 @@
           </article>
           <article class="panel reveal">
             <h3>Camcom</h3>
+            <div class="project-badges">
+              <span class="tech-badge tech-laravel">Laravel</span>
+            </div>
             <p>Built with Laravel + Bootstrap + MySQL.</p>
             <a href="https://camcom.ai/" target="_blank" rel="noreferrer">camcom.ai</a>
           </article>
           <article class="panel reveal">
             <h3>Zoyasbooks</h3>
+            <div class="project-badges">
+              <span class="tech-badge tech-laravel">Laravel</span>
+            </div>
             <p>Built with Laravel + Bootstrap + MySQL.</p>
             <a href="https://zoyasbooks.com/" target="_blank" rel="noreferrer"
               >zoyasbooks.com</a
@@ -223,11 +337,17 @@
           </article>
           <article class="panel reveal">
             <h3>STL Tech</h3>
+            <div class="project-badges">
+              <span class="tech-badge tech-wordpress">WordPress</span>
+            </div>
             <p>WordPress implementation.</p>
             <a href="https://stl.tech/" target="_blank" rel="noreferrer">stl.tech</a>
           </article>
           <article class="panel reveal">
             <h3>Apollo Coated Steel</h3>
+            <div class="project-badges">
+              <span class="tech-badge tech-wordpress">WordPress</span>
+            </div>
             <p>WordPress implementation.</p>
             <a href="https://aplapollocoatedsteel.com/" target="_blank" rel="noreferrer"
               >aplapollocoatedsteel.com</a
@@ -235,25 +355,111 @@
           </article>
           <article class="panel reveal">
             <h3>Instax</h3>
+            <div class="project-badges">
+              <span class="tech-badge tech-shopify">Shopify</span>
+            </div>
             <p>Shopify implementation.</p>
             <a href="https://www.instax.in/" target="_blank" rel="noreferrer">instax.in</a>
           </article>
           <article class="panel reveal">
             <h3>Haldiram UK</h3>
+            <div class="project-badges">
+              <span class="tech-badge tech-shopify">Shopify</span>
+            </div>
             <p>Shopify implementation.</p>
             <a href="https://www.haldiramuk.com/" target="_blank" rel="noreferrer"
               >haldiramuk.com</a
             >
           </article>
+          <article class="panel reveal hidden-project">
+            <h3>Maison Dali Dubai</h3>
+            <div class="project-badges">
+              <span class="tech-badge tech-wordpress">WordPress</span>
+            </div>
+            <p>WordPress development.</p>
+            <a href="https://www.maisondalidubai.ae/" target="_blank" rel="noreferrer"
+              >maisondalidubai.ae</a
+            >
+          </article>
+          <article class="panel reveal hidden-project">
+            <h3>Revolver Dubai</h3>
+            <div class="project-badges">
+              <span class="tech-badge tech-wordpress">WordPress</span>
+            </div>
+            <p>WordPress development.</p>
+            <a href="https://revolverdubai.ae/" target="_blank" rel="noreferrer"
+              >revolverdubai.ae</a
+            >
+          </article>
+          <article class="panel reveal hidden-project">
+            <h3>Revolver</h3>
+            <div class="project-badges">
+              <span class="tech-badge tech-wordpress">WordPress</span>
+            </div>
+            <p>WordPress maintenance.</p>
+            <a href="https://revolver.com/" target="_blank" rel="noreferrer">revolver.com</a>
+          </article>
+          <article class="panel reveal hidden-project">
+            <h3>Archi Dply</h3>
+            <div class="project-badges">
+              <span class="tech-badge tech-wordpress">WordPress</span>
+            </div>
+            <p>WordPress maintenance.</p>
+            <a href="https://www.archidply.com/" target="_blank" rel="noreferrer"
+              >archidply.com</a
+            >
+          </article>
+          <article class="panel reveal hidden-project">
+            <h3>Serentica Global</h3>
+            <div class="project-badges">
+              <span class="tech-badge tech-wordpress">WordPress</span>
+            </div>
+            <p>WordPress maintenance.</p>
+            <a href="https://www.serenticaglobal.com/" target="_blank" rel="noreferrer"
+              >serenticaglobal.com</a
+            >
+          </article>
+          <article class="panel reveal hidden-project">
+            <h3>Indian City Properties</h3>
+            <div class="project-badges">
+              <span class="tech-badge tech-wordpress">WordPress</span>
+            </div>
+            <p>WordPress maintenance.</p>
+            <a href="https://www.indiancityproperties.com/" target="_blank" rel="noreferrer"
+              >indiancityproperties.com</a
+            >
+          </article>
+          <article class="panel reveal hidden-project">
+            <h3>Skinwood</h3>
+            <div class="project-badges">
+              <span class="tech-badge tech-wordpress">WordPress</span>
+            </div>
+            <p>WordPress maintenance.</p>
+            <a href="https://skinwood.com/" target="_blank" rel="noreferrer">skinwood.com</a>
+          </article>
         </section>
+        <div class="load-more-wrap reveal">
+          <button class="btn btn-ghost" id="load-more-projects" type="button" aria-expanded="false">
+            <svg class="i"><use href="#i-chevron"></use></svg>
+            <span>Load More Projects</span>
+          </button>
+        </div>
       </main>
 
       <footer class="footer reveal">
-        <a href="https://www.linkedin.com/in/ravindra4736/" target="_blank" rel="noreferrer"
-          >LinkedIn</a
+        <a class="footer-link footer-linkedin" href="https://www.linkedin.com/in/ravindra4736/" target="_blank" rel="noreferrer"
+          ><svg class="i"><use href="#i-linkedin"></use></svg>LinkedIn</a
         >
-        <a href="./Ravi_Resume17feb.pdf" target="_blank">Resume PDF</a>
-        <a href="./Ravi_Resume17feb.pdf" target="_blank">Contact Details in Resume</a>
+        <a
+          class="footer-link footer-whatsapp"
+          href="https://wa.me/918800818328?text=Hi%20Ravindra%2C%20I%20want%20to%20discuss%20a%20project."
+          target="_blank"
+          rel="noreferrer"
+          ><svg class="i"><use href="#i-whatsapp"></use></svg>WhatsApp</a
+        >
+        <a class="footer-link footer-resume" href="./Ravi_Resume17feb.pdf" target="_blank"
+          ><svg class="i"><use href="#i-download"></use></svg>Resume PDF</a
+        >
       </footer>
     </div>
 

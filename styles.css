@@ -33,6 +33,13 @@ body {
   position: relative;
 }
 
+.icon-sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
 .grain {
   position: fixed;
   inset: 0;
@@ -207,6 +214,9 @@ h1 {
 
 .contact-strip span,
 .contact-strip a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
   border: 1px solid rgba(186, 203, 255, 0.28);
   border-radius: 999px;
   padding: 0.45rem 0.78rem;
@@ -216,7 +226,32 @@ h1 {
   font-size: 0.88rem;
 }
 
+.contact-link .i {
+  padding: 0.24rem;
+  border-radius: 999px;
+  width: 1.35rem;
+  height: 1.35rem;
+}
+
+.contact-phone .i {
+  color: #5db7ff;
+  background: rgba(93, 183, 255, 0.18);
+}
+
+.contact-whatsapp .i {
+  color: #38d66b;
+  background: rgba(56, 214, 107, 0.2);
+}
+
+.contact-mail .i {
+  color: #ff8a80;
+  background: rgba(255, 138, 128, 0.2);
+}
+
 .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   text-decoration: none;
   font-weight: 700;
   font-size: 0.92rem;
@@ -233,6 +268,10 @@ h1 {
   color: #031116;
   background: linear-gradient(100deg, var(--brand), #9effe7);
   box-shadow: 0 8px 30px rgba(43, 255, 205, 0.25);
+}
+
+.btn-primary .i {
+  color: #042b22;
 }
 
 .btn-ghost {
@@ -340,10 +379,38 @@ main {
   text-decoration: underline;
 }
 
+.i {
+  width: 1.02rem;
+  height: 1.02rem;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
 .experience-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.95rem;
+}
+
+.deliverables-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.95rem;
+}
+
+.approach-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.95rem;
+}
+
+.impact-list {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.impact-list li {
+  margin-bottom: 0.5rem;
 }
 
 .timeline {
@@ -401,6 +468,60 @@ li {
   gap: 0.95rem;
 }
 
+.project-badges {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin: 0.2rem 0 0.65rem;
+}
+
+.tech-badge {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  padding: 0.2rem 0.58rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.tech-wordpress {
+  color: #6ec6ff;
+  background: rgba(110, 198, 255, 0.16);
+  border-color: rgba(110, 198, 255, 0.42);
+}
+
+.tech-shopify {
+  color: #9bffbe;
+  background: rgba(68, 197, 115, 0.18);
+  border-color: rgba(68, 197, 115, 0.42);
+}
+
+.tech-laravel {
+  color: #ff9f95;
+  background: rgba(255, 98, 80, 0.17);
+  border-color: rgba(255, 98, 80, 0.42);
+}
+
+.hidden-project {
+  display: none;
+}
+
+.load-more-wrap {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+#load-more-projects .i {
+  transition: transform 180ms ease;
+}
+
+#load-more-projects[aria-expanded="true"] .i {
+  transform: rotate(180deg);
+}
+
 .footer {
   margin-top: 1.3rem;
   padding-top: 0.9rem;
@@ -411,11 +532,36 @@ li {
 }
 
 .footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   color: #dce4ff;
   text-decoration: none;
   border: 1px solid var(--line);
   border-radius: 999px;
   padding: 0.4rem 0.74rem;
+}
+
+.footer-link .i {
+  padding: 0.2rem;
+  border-radius: 999px;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.footer-linkedin .i {
+  color: #66b6ff;
+  background: rgba(102, 182, 255, 0.2);
+}
+
+.footer-whatsapp .i {
+  color: #45dd7a;
+  background: rgba(69, 221, 122, 0.2);
+}
+
+.footer-resume .i {
+  color: #ffb26b;
+  background: rgba(255, 178, 107, 0.2);
 }
 
 .reveal {
@@ -446,6 +592,8 @@ li {
 
   .hero-grid,
   .stats,
+  .deliverables-grid,
+  .approach-grid,
   .experience-grid,
   .meta-grid,
   .project-grid {

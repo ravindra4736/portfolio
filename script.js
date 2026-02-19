@@ -50,9 +50,47 @@ if ("IntersectionObserver" in window) {
 }
 
 const glow = document.querySelector(".cursor-glow");
-if (glow && window.matchMedia("(min-width: 901px)").matches) {
+const parallaxNodes = [...document.querySelectorAll("[data-parallax]")];
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (window.matchMedia("(min-width: 901px)").matches && !reduceMotion) {
   window.addEventListener("pointermove", (event) => {
-    glow.style.left = `${event.clientX}px`;
-    glow.style.top = `${event.clientY}px`;
+    if (glow) {
+      glow.style.left = `${event.clientX}px`;
+      glow.style.top = `${event.clientY}px`;
+    }
+
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
+    const deltaX = event.clientX - centerX;
+    const deltaY = event.clientY - centerY;
+
+    parallaxNodes.forEach((node) => {
+      const speed = Number(node.dataset.parallax || 0);
+      const moveX = -deltaX * speed;
+      const moveY = -deltaY * speed;
+      node.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
+    });
+  });
+}
+
+const loadMoreButton = document.querySelector("#load-more-projects");
+const hiddenProjects = [...document.querySelectorAll(".hidden-project")];
+
+if (loadMoreButton && hiddenProjects.length) {
+  let expanded = false;
+  const loadMoreText = loadMoreButton.querySelector("span");
+  loadMoreButton.addEventListener("click", () => {
+    expanded = !expanded;
+    hiddenProjects.forEach((project) => {
+      project.style.display = expanded ? "block" : "none";
+      if (expanded) project.classList.add("in");
+    });
+    if (loadMoreText) {
+      loadMoreText.textContent = expanded ? "Show Less Projects" : "Load More Projects";
+    } else {
+      loadMoreButton.textContent = expanded ? "Show Less Projects" : "Load More Projects";
+    }
+    loadMoreButton.setAttribute("aria-expanded", String(expanded));
   });
 }
