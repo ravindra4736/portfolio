@@ -19,6 +19,10 @@ body {
   min-height: 100%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Space Grotesk", "Segoe UI", sans-serif;
   color: var(--text);
@@ -31,6 +35,13 @@ body {
   margin: 0 auto;
   padding: 1.4rem 1.1rem 3rem;
   position: relative;
+}
+
+.icon-sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
 }
 
 .grain {
@@ -95,6 +106,76 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
+}
+
+.section-nav {
+  position: fixed;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 35;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.42rem;
+  border: 1px solid rgba(186, 203, 255, 0.2);
+  border-radius: 14px;
+  background: rgba(7, 13, 27, 0.7);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.28);
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #d8e4ff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.38rem 0.7rem;
+  border-radius: 9px;
+  border: 1px solid transparent;
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  border-color: rgba(186, 203, 255, 0.34);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.nav-link.active {
+  color: #081620;
+}
+
+.section-nav .nav-link:nth-child(1).active {
+  background: linear-gradient(100deg, #5ef2d6, #8be7ff);
+}
+
+.section-nav .nav-link:nth-child(2).active {
+  background: linear-gradient(100deg, #7ec3ff, #9f8dff);
+}
+
+.section-nav .nav-link:nth-child(3).active {
+  background: linear-gradient(100deg, #8eb8ff, #6bf2d7);
+}
+
+.section-nav .nav-link:nth-child(4).active {
+  background: linear-gradient(100deg, #ffb86c, #ffd36e);
+}
+
+.section-nav .nav-link:nth-child(5).active {
+  background: linear-gradient(100deg, #ff9d9d, #ffc0a5);
+}
+
+.section-nav .nav-link:nth-child(6).active {
+  background: linear-gradient(100deg, #9be3ff, #6fc8ff);
+}
+
+.section-nav .nav-link:nth-child(7).active {
+  background: linear-gradient(100deg, #89f5c6, #6ad0ff);
+}
+
+.section-nav .nav-link:nth-child(8).active {
+  background: linear-gradient(100deg, #66d6a5, #5cf2c9);
 }
 
 .brand {
@@ -182,6 +263,14 @@ h1 {
   text-shadow: 0 10px 34px rgba(7, 10, 22, 0.7);
 }
 
+.title-accent {
+  background: linear-gradient(90deg, #ffcb6f 0%, #47b8ff 50%, #ffcb6f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+}
+
 .intro {
   max-width: 66ch;
   color: #f0f4ff;
@@ -207,6 +296,9 @@ h1 {
 
 .contact-strip span,
 .contact-strip a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
   border: 1px solid rgba(186, 203, 255, 0.28);
   border-radius: 999px;
   padding: 0.45rem 0.78rem;
@@ -216,7 +308,32 @@ h1 {
   font-size: 0.88rem;
 }
 
+.contact-link .i {
+  padding: 0.24rem;
+  border-radius: 999px;
+  width: 1.35rem;
+  height: 1.35rem;
+}
+
+.contact-phone .i {
+  color: #5db7ff;
+  background: rgba(93, 183, 255, 0.18);
+}
+
+.contact-whatsapp .i {
+  color: #38d66b;
+  background: rgba(56, 214, 107, 0.2);
+}
+
+.contact-mail .i {
+  color: #ff8a80;
+  background: rgba(255, 138, 128, 0.2);
+}
+
 .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   text-decoration: none;
   font-weight: 700;
   font-size: 0.92rem;
@@ -233,6 +350,10 @@ h1 {
   color: #031116;
   background: linear-gradient(100deg, var(--brand), #9effe7);
   box-shadow: 0 8px 30px rgba(43, 255, 205, 0.25);
+}
+
+.btn-primary .i {
+  color: #042b22;
 }
 
 .btn-ghost {
@@ -303,12 +424,21 @@ main {
   margin: 1.6rem 0 0.7rem;
 }
 
+.scroll-section {
+  scroll-margin-top: 6.5rem;
+}
+
 .section-head h2,
 .panel h2 {
   font-family: "Space Grotesk", "Segoe UI", sans-serif;
   font-weight: 700;
   letter-spacing: 0.01em;
   font-size: clamp(1.4rem, 2.8vw, 2rem);
+  background: linear-gradient(90deg, #fff 0%, #47b8ff 50%, #ffcb6f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 4px 18px rgba(255, 190, 95, 0.12);
 }
 
 .section-head p {
@@ -323,6 +453,20 @@ main {
   padding: 1.15rem;
   backdrop-filter: blur(12px);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+}
+
+/* Reuse project-style colorful card treatment across key section boxes */
+.deliverables-grid .panel,
+.approach-grid .panel,
+.experience-grid .panel,
+.meta-grid .panel,
+#impact + .panel {
+  background:
+    radial-gradient(circle at 18% 22%, rgba(44, 214, 182, 0.14), transparent 42%),
+    radial-gradient(circle at 82% 76%, rgba(255, 174, 89, 0.14), transparent 45%),
+    radial-gradient(circle at 52% 56%, rgba(99, 148, 255, 0.16), transparent 48%),
+    var(--card);
+  border: 1px solid rgba(153, 177, 238, 0.34);
 }
 
 .panel p {
@@ -340,10 +484,38 @@ main {
   text-decoration: underline;
 }
 
+.i {
+  width: 1.02rem;
+  height: 1.02rem;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
 .experience-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.95rem;
+}
+
+.deliverables-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.95rem;
+}
+
+.approach-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.95rem;
+}
+
+.impact-list {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.impact-list li {
+  margin-bottom: 0.5rem;
 }
 
 .timeline {
@@ -401,6 +573,60 @@ li {
   gap: 0.95rem;
 }
 
+.project-badges {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin: 0.2rem 0 0.65rem;
+}
+
+.tech-badge {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  padding: 0.2rem 0.58rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.tech-wordpress {
+  color: #6ec6ff;
+  background: rgba(110, 198, 255, 0.16);
+  border-color: rgba(110, 198, 255, 0.42);
+}
+
+.tech-shopify {
+  color: #9bffbe;
+  background: rgba(68, 197, 115, 0.18);
+  border-color: rgba(68, 197, 115, 0.42);
+}
+
+.tech-laravel {
+  color: #ff9f95;
+  background: rgba(255, 98, 80, 0.17);
+  border-color: rgba(255, 98, 80, 0.42);
+}
+
+.hidden-project {
+  display: none;
+}
+
+.load-more-wrap {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+#load-more-projects .i {
+  transition: transform 180ms ease;
+}
+
+#load-more-projects[aria-expanded="true"] .i {
+  transform: rotate(180deg);
+}
+
 .footer {
   margin-top: 1.3rem;
   padding-top: 0.9rem;
@@ -411,11 +637,36 @@ li {
 }
 
 .footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   color: #dce4ff;
   text-decoration: none;
   border: 1px solid var(--line);
   border-radius: 999px;
   padding: 0.4rem 0.74rem;
+}
+
+.footer-link .i {
+  padding: 0.2rem;
+  border-radius: 999px;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.footer-linkedin .i {
+  color: #66b6ff;
+  background: rgba(102, 182, 255, 0.2);
+}
+
+.footer-whatsapp .i {
+  color: #45dd7a;
+  background: rgba(69, 221, 122, 0.2);
+}
+
+.footer-resume .i {
+  color: #ffb26b;
+  background: rgba(255, 178, 107, 0.2);
 }
 
 .reveal {
@@ -446,6 +697,8 @@ li {
 
   .hero-grid,
   .stats,
+  .deliverables-grid,
+  .approach-grid,
   .experience-grid,
   .meta-grid,
   .project-grid {
@@ -465,6 +718,24 @@ li {
   }
 
   .cursor-glow {
+    display: none;
+  }
+
+  .section-nav {
+    position: fixed;
+    top: 0.4rem;
+    right: auto;
+    transform: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    max-width: 360px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+  .section-nav::-webkit-scrollbar {
     display: none;
   }
   .stats li {
@@ -498,6 +769,10 @@ li {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   .mesh,
   .reveal,
   .btn,
